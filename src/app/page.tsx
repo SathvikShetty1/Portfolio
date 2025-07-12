@@ -105,88 +105,94 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-16">
+    <>
       {/* Hero Section */}
-      <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-8 mb-32">
-        <div className="space-y-4 md:w-2/3 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline leading-tight">
-            <span className="block text-muted-foreground">Sathvik Shetty</span>
-            <span className="block text-muted-foreground">Aspiring Cloud & Network Engineer</span>
-          </h1>
-          <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto md:mx-0">
-            I'm on an exciting journey exploring the vast world of AWS Cloud and Network Engineering. This portfolio is a living document of my projects, learnings, and growth in building robust and scalable cloud infrastructure.
-          </p>
-          <div className="flex gap-4 pt-4 justify-center md:justify-start">
-            <Button size="lg" asChild>
-              <a href="#projects">
-                View My Projects <ArrowRight />
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="#contact">
-                Get In Touch <Mail />
-              </a>
-            </Button>
-          </div>
-        </div>
-        <div className="relative">
-          <AnimatedCharacter />
+      <section id="home" className="py-20 md:py-32">
+        <div className="container mx-auto text-center">
+            <div className="flex justify-center mb-8">
+              <AnimatedCharacter />
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline leading-tight">
+              Sathvik Shetty
+            </h1>
+            <p className="text-2xl md:text-3xl text-muted-foreground mt-3 mb-8">
+              Aspiring Cloud & Network Engineer
+            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              I'm on an exciting journey exploring the vast world of AWS Cloud and Network Engineering. This portfolio is a living document of my projects, learnings, and growth in building robust and scalable cloud infrastructure.
+            </p>
+            <div className="flex gap-4 pt-8 justify-center">
+              <Button size="lg" asChild>
+                <a href="#projects">
+                  View My Projects <ArrowRight />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="#contact">
+                  Get In Touch <Mail />
+                </a>
+              </Button>
+            </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="mb-24">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-headline">My Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-md hover:shadow-xl">
-              <CardHeader className="p-0">
-                 <Image src={project.image} alt={project.title} width={600} height={400} className="object-cover" data-ai-hint={project.hint} />
-              </CardHeader>
-              <CardContent className="flex-grow pt-6">
-                <CardTitle className="font-headline">{project.title}</CardTitle>
-                <CardDescription className="mt-2">{project.description}</CardDescription>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-end gap-2">
-                 <Button variant="ghost" asChild>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github /> Source
-                  </a>
-                </Button>
-                 <Button asChild>
-                   <a href={project.live} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink /> Live Demo
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+      <section id="projects" className="py-20 md:py-24 bg-secondary">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-headline">My Projects</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <Card key={project.title} className="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl bg-card">
+                <CardHeader className="p-0">
+                   <Image src={project.image} alt={project.title} width={600} height={400} className="object-cover" data-ai-hint={project.hint} />
+                </CardHeader>
+                <CardContent className="flex-grow pt-6">
+                  <CardTitle className="font-headline">{project.title}</CardTitle>
+                  <CardDescription className="mt-2">{project.description}</CardDescription>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-end gap-2 bg-muted/50 p-4">
+                   <Button variant="ghost" asChild>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github /> Source
+                    </a>
+                  </Button>
+                   <Button asChild>
+                     <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink /> Live Demo
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-headline">Contact Me</h2>
-        <Card className="max-w-2xl mx-auto shadow-lg">
-            <CardHeader>
-                <CardTitle>Let's Connect</CardTitle>
-                <CardDescription>Have a question or want to work together? Drop me a message.</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <form className="space-y-4" onSubmit={handleContactSubmit}>
-                    <Input placeholder="Your Name" type="text" required />
-                    <Input placeholder="Your Email" type="email" required />
-                    <Textarea placeholder="Your Message" rows={5} required />
-                    <Button type="submit" className="w-full">
-                        Send Message <ArrowRight />
-                    </Button>
-                </form>
-            </CardContent>
-        </Card>
+      <section id="contact" className="py-20 md:py-24">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-headline">Contact Me</h2>
+          <Card className="max-w-2xl mx-auto shadow-lg">
+              <CardHeader>
+                  <CardTitle>Let's Connect</CardTitle>
+                  <CardDescription>Have a question or want to work together? Drop me a message.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                  <form className="space-y-4" onSubmit={handleContactSubmit}>
+                      <Input placeholder="Your Name" type="text" required />
+                      <Input placeholder="Your Email" type="email" required />
+                      <Textarea placeholder="Your Message" rows={5} required />
+                      <Button type="submit" className="w-full">
+                          Send Message <ArrowRight />
+                      </Button>
+                  </form>
+              </CardContent>
+          </Card>
+        </div>
       </section>
-    </div>
+    </>
   );
 }
