@@ -3,7 +3,6 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 
 export const metadata: Metadata = {
@@ -33,7 +32,6 @@ export default function RootLayout({
         >
           <Header />
           <main className="flex-grow">{children}</main>
-          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>
