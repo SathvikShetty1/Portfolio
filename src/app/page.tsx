@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { Github, Linkedin, Mail, ArrowRight, ExternalLink, Cloud, Server, Network } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { useToast } from '@/hooks/use-toast';
 
@@ -107,19 +107,19 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-16">
       {/* Hero Section */}
-      <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-8 mb-24">
-        <div className="space-y-4 md:w-2/3 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tighter">
+      <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-8 mb-32">
+        <div className="space-y-6 md:w-2/3 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline">
             <span className="block text-primary mb-2">Sathvik Shetty</span>
-            Aspiring Cloud & Network Engineer
+            <span className="text-muted-foreground">Aspiring Cloud & Network Engineer</span>
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto md:mx-0">
             I'm on an exciting journey exploring the vast world of AWS Cloud and Network Engineering. This portfolio is a living document of my projects, learnings, and growth in building robust and scalable cloud infrastructure.
           </p>
           <div className="flex gap-4 pt-4 justify-center md:justify-start">
             <Button size="lg" asChild>
               <a href="#projects">
-                My Projects <ArrowRight />
+                View My Projects <ArrowRight />
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
