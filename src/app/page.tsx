@@ -108,10 +108,10 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8 md:py-16">
       {/* Hero Section */}
       <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-8 mb-32">
-        <div className="space-y-6 md:w-2/3 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline">
-            <span className="block mb-2 text-muted-foreground">Sathvik Shetty</span>
-            <span className="text-muted-foreground">Aspiring Cloud & Network Engineer</span>
+        <div className="space-y-4 md:w-2/3 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline leading-tight">
+            <span className="block text-muted-foreground">Sathvik Shetty</span>
+            <span className="block text-muted-foreground">Aspiring Cloud & Network Engineer</span>
           </h1>
           <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto md:mx-0">
             I'm on an exciting journey exploring the vast world of AWS Cloud and Network Engineering. This portfolio is a living document of my projects, learnings, and growth in building robust and scalable cloud infrastructure.
