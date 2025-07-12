@@ -1,5 +1,4 @@
 'use client';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -39,6 +38,29 @@ const projects = [
   },
 ];
 
+const AnimatedCharacter = () => (
+    <svg viewBox="0 0 200 200" className="w-48 h-48 md:w-64 md:h-64">
+        <g>
+            {/* Table */}
+            <rect x="10" y="150" width="180" height="20" fill="hsl(var(--muted-foreground))" rx="5"></rect>
+            <rect x="30" y="170" width="10" height="20" fill="hsl(var(--muted-foreground))"></rect>
+            <rect x="160" y="170" width="10" height="20" fill="hsl(var(--muted-foreground))"></rect>
+
+            {/* Laptop */}
+            <rect x="75" y="120" width="50" height="30" fill="hsl(var(--secondary-foreground))" rx="3"></rect>
+            <rect x="72" y="117" width="56" height="4" fill="hsl(var(--secondary))" rx="2"></rect>
+
+            {/* Chair */}
+            <rect x="50" y="140" width="100" height="50" fill="hsl(var(--accent))" rx="10"></rect>
+            
+            {/* Person */}
+            <circle cx="100" cy="100" r="20" fill="hsl(var(--primary))"></circle>
+            <rect x="90" y="120" width="20" height="40" fill="hsl(var(--primary))" rx="10"></rect>
+        </g>
+    </svg>
+);
+
+
 export default function Home() {
   const { toast } = useToast();
 
@@ -56,14 +78,15 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8 md:py-16">
       {/* Hero Section */}
       <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-8 mb-24">
-        <div className="space-y-4 md:w-2/3">
+        <div className="space-y-4 md:w-2/3 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tighter">
+            <span className="block text-primary">Sathvik Shetty</span>
             Aspiring Cloud & Network Engineer
           </h1>
           <p className="text-lg text-muted-foreground">
             I'm on an exciting journey exploring the vast world of AWS Cloud and Network Engineering. This portfolio is a living document of my projects, learnings, and growth in building robust and scalable cloud infrastructure.
           </p>
-          <div className="flex gap-4 pt-4">
+          <div className="flex gap-4 pt-4 justify-center md:justify-start">
             <Button size="lg" asChild>
               <a href="#projects">
                 My Projects <ArrowRight />
@@ -77,10 +100,7 @@ export default function Home() {
           </div>
         </div>
         <div className="relative">
-          <Avatar className="w-48 h-48 md:w-64 md:h-64 border-4 border-primary/20 shadow-lg">
-            <AvatarImage src="https://placehold.co/256x256.png" alt="Your Name" data-ai-hint="professional portrait" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          <AnimatedCharacter />
         </div>
       </section>
 
