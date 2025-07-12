@@ -110,7 +110,7 @@ export default function Home() {
       <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-8 mb-32">
         <div className="space-y-6 md:w-2/3 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline">
-            <span className="block mb-2">Sathvik Shetty</span>
+            <span className="block mb-2 text-muted-foreground">Sathvik Shetty</span>
             <span className="text-muted-foreground">Aspiring Cloud & Network Engineer</span>
           </h1>
           <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto md:mx-0">
