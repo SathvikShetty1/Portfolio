@@ -39,23 +39,53 @@ const projects = [
 ];
 
 const AnimatedCharacter = () => (
-    <svg viewBox="0 0 200 200" className="w-48 h-48 md:w-64 md:h-64">
+    <svg viewBox="0 0 250 200" className="w-64 h-64 md:w-80 md:h-80">
         <g>
-            {/* Table */}
-            <rect x="10" y="150" width="180" height="20" fill="hsl(var(--muted-foreground))" rx="5"></rect>
-            <rect x="30" y="170" width="10" height="20" fill="hsl(var(--muted-foreground))"></rect>
-            <rect x="160" y="170" width="10" height="20" fill="hsl(var(--muted-foreground))"></rect>
+            {/* Background */}
+            <rect x="0" y="0" width="250" height="200" fill="hsl(var(--background))" />
+            
+            {/* Window */}
+            <rect x="150" y="20" width="90" height="60" fill="#87CEEB" rx="5" />
+            <rect x="145" y="15" width="100" height="70" fill="none" stroke="hsl(var(--foreground))" strokeWidth="2" rx="5" />
+            <line x1="195" y1="15" x2="195" y2="85" stroke="hsl(var(--foreground))" strokeWidth="2" />
+            <line x1="145" y1="50" x2="245" y2="50" stroke="hsl(var(--foreground))" strokeWidth="2" />
+
+            {/* Desk */}
+            <rect x="5" y="150" width="240" height="45" fill="hsl(var(--muted))" rx="5" />
+            <rect x="5" y="150" width="240" height="5" fill="hsl(var(--muted-foreground))" opacity="0.2" rx="2" />
 
             {/* Laptop */}
-            <rect x="75" y="120" width="50" height="30" fill="hsl(var(--secondary-foreground))" rx="3"></rect>
-            <rect x="72" y="117" width="56" height="4" fill="hsl(var(--secondary))" rx="2"></rect>
+            <path d="M 120 125 L 115 152 L 155 152 L 150 125 Z" fill="hsl(var(--secondary))" />
+            <rect x="122" y="100" width="56" height="30" fill="hsl(var(--secondary-foreground))" rx="3" />
+            <rect x="124" y="103" width="52" height="24" fill="hsl(var(--background))" />
+             <circle cx="150" cy="118" r="2" fill="hsl(var(--primary))" />
 
-            {/* Chair */}
-            <rect x="50" y="140" width="100" height="50" fill="hsl(var(--accent))" rx="10"></rect>
-            
+
             {/* Person */}
-            <circle cx="100" cy="100" r="20" fill="hsl(var(--primary))"></circle>
-            <rect x="90" y="120" width="20" height="40" fill="hsl(var(--primary))" rx="10"></rect>
+            <rect x="75" y="110" width="50" height="40" fill="hsl(var(--primary))" rx="10" />
+            <circle cx="100" cy="90" r="15" fill="hsl(var(--primary-foreground))" stroke="hsl(var(--primary))" strokeWidth="2" />
+            <circle cx="95" cy="88" r="1.5" fill="hsl(var(--primary))" />
+            <circle cx="105" cy="88" r="1.5" fill="hsl(var(--primary))" />
+            <path d="M 95 95 Q 100 100 105 95" stroke="hsl(var(--primary))" fill="none" strokeWidth="1" />
+
+            {/* Owl */}
+            <path d="M 50 120 C 40 155, 80 155, 70 120 Z" fill="hsl(var(--accent))" />
+            <circle cx="55" cy="130" r="7" fill="white" />
+            <circle cx="65" cy="130" r="7" fill="white" />
+            <circle cx="55" cy="130" r="3" fill="black" />
+            <circle cx="65" cy="130" r="3" fill="black" />
+            <path d="M 58 138 L 62 138 L 60 142 Z" fill="orange" />
+
+
+            {/* Books */}
+            <rect x="20" y="135" width="40" height="15" fill="#DC2626" rx="2" />
+            <rect x="20" y="120" width="40" height="15" fill="#2563EB" rx="2" />
+            <rect x="20" y="105" width="40" height="15" fill="#16A34A" rx="2" />
+            
+            {/* Mug */}
+            <rect x="165" y="135" width="20" height="15" fill="#3B82F6" rx="3" />
+            <rect x="183" y="138" width="5" height="8" fill="none" stroke="#3B82F6" strokeWidth="2" rx="2" />
+
         </g>
     </svg>
 );
