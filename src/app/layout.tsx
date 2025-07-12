@@ -24,12 +24,12 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn('font-body antialiased', 'flex flex-col min-h-screen bg-background')}>
+      <body className={cn('font-body antialiased', 'flex flex-col min-h-screen bg-background transition-colors duration-300')}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
+          disableTransitionOnChange={false}
         >
           <Header />
           <main className="flex-grow">{children}</main>
