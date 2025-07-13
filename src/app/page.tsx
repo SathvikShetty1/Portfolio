@@ -58,7 +58,7 @@ export default function Home() {
       
       const timer = setTimeout(() => {
         setImageVisible(true);
-      }, 400); 
+      }, 500); 
 
       return () => clearTimeout(timer);
     }
@@ -78,7 +78,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="pt-0 pb-8 md:pb-16">
+      <section id="home" className="pb-8 md:pb-16">
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-[-100px] h-[600px] items-center">
               {mounted ? (
