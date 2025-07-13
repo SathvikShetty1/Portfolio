@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="py-16 md:py-28">
+      <section id="home" className="py-8 md:py-20">
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-8">
               <Image 
