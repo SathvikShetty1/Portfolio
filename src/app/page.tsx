@@ -106,7 +106,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
-                <a href="mailto:sathvikshetty794@gmail.com">
+                <a href="#contact">
                   Get In Touch <ExternalLink />
                 </a>
               </Button>
@@ -156,14 +156,10 @@ export default function Home() {
           <Card className="max-w-2xl mx-auto shadow-lg">
               <CardHeader>
                   <CardTitle>Let's Connect</CardTitle>
-                  <CardDescription>Have a question or want to work together? Drop me a message.</CardDescription>
+                  <CardDescription>You can reach me at the email address below.</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
-                  <Button asChild size="lg">
-                    <a href="mailto:sathvikshetty794@gmail.com">
-                      Send an Email <ExternalLink className="ml-2"/>
-                    </a>
-                  </Button>
+                <p className="text-lg font-semibold text-primary">sathvikshetty794@gmail.com</p>
               </CardContent>
           </Card>
         </div>
