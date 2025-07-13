@@ -62,7 +62,7 @@ export default function Home() {
       // 2. Set a timer to show the image after the background has transitioned
       const timer = setTimeout(() => {
         setImageVisible(true);
-      }, 500); // 500ms delay ensures background transition (300ms) is complete
+      }, 400); // 400ms delay ensures background transition is complete
 
       // Cleanup timer on component unmount or if theme changes again
       return () => clearTimeout(timer);
@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="py-8 md:py-16">
+      <section id="home" className="pt-10 pb-8 md:pb-16">
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-8 h-[600px] items-center">
               {mounted ? (
