@@ -68,7 +68,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="py-[10px] md:py-16">
         <div className="container mx-auto text-center">
-            <div className="flex justify-center mb-[-100px] h-[400px] md:h-[600px] items-center">
+            <div className="flex justify-center mb-[-40px] md:mb-[-100px] h-[400px] md:h-[600px] items-center">
               {mounted ? (
                   <Image 
                     src={imageSrc}
