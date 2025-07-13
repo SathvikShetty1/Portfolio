@@ -95,8 +95,8 @@ export default function Home() {
                     height={600}
                     priority
                     className={cn(
-                      "transition-all duration-500 ease-in-out",
-                      imageVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                      "ease-in-out",
+                      imageVisible ? "opacity-100 scale-100 transition-all duration-500" : "opacity-0 scale-95"
                     )}
                   />
               ) : (
