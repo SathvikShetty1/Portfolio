@@ -78,7 +78,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="py-12 md:py-16">
+      <section id="home" className="py-[30px] md:py-16">
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-[-100px] h-[500px] md:h-[600px] items-center">
               {mounted ? (
