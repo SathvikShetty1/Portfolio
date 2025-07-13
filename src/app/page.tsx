@@ -100,7 +100,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline leading-tight">
               Sathvik Shetty
             </h1>
-            <p className="text-xl md:text-3xl text-muted-foreground mt-2 mb-4">
+            <p className="text-xl md:text-3xl text-muted-foreground mt-3 mb-3">
               Aspiring Cloud & Network Engineer
             </p>
             <p className="text-md md:text-lg text-muted-foreground max-w-2xl mx-auto">
