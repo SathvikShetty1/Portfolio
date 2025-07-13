@@ -1,8 +1,9 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Rss } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -12,7 +13,7 @@ function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <Button variant="ghost" size="icon" disabled={true} className="hover:bg-transparent">
+      <Button variant="ghost" size="icon" disabled={true}>
         <Sun className="h-[1.2rem] w-[1.2rem]" />
         <span className="sr-only">Toggle theme</span>
       </Button>
@@ -24,7 +25,6 @@ function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="hover:bg-transparent"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -35,7 +35,13 @@ function ThemeToggle() {
 
 export default function Header() {
   return (
-    <header className="absolute top-0 right-0 p-4 z-50">
+    <header className="absolute top-0 left-0 right-0 p-4 z-50 flex justify-between items-center">
+      <Button asChild variant="ghost">
+        <Link href="/blog">
+          <Rss className="mr-2 h-4 w-4" />
+          Blog
+        </Link>
+      </Button>
       <ThemeToggle />
     </header>
   );
