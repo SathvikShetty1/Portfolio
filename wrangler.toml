@@ -1,0 +1,7 @@
+name = "sathvik"
+type = "javascript"
+compatibility_date = "2025-07-13"
+
+[site]
+bucket = "./.vercel/output/static"
+entry-point = "."
