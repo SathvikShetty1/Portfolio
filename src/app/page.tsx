@@ -106,7 +106,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
-                <a href="#contact">
+                <a href="mailto:sathvikshetty794@gmail.com">
                   Get In Touch <Mail />
                 </a>
               </Button>
