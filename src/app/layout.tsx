@@ -8,6 +8,9 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider';
 export const metadata: Metadata = {
   title: 'Sathvik',
   description: 'A portfolio showcasing my journey in AWS Cloud and Network Engineering.',
+  icons: {
+    icon: '/images/i.png',
+  },
 };
 
 export default function RootLayout({
