@@ -58,7 +58,7 @@ export default function Home() {
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-8">
               <Image 
-                src="/images/me_day.png" 
+                src="/images/i.png" 
                 alt="Sathvik Shetty" 
                 width={300} 
                 height={300}
