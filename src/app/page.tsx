@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { useToast } from '@/hooks/use-toast';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const projects = [
   {
@@ -44,10 +45,22 @@ export default function Home() {
   const { toast } = useToast();
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [imageVisible, setImageVisible] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    setImageVisible(true);
   }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      setImageVisible(false);
+      const timer = setTimeout(() => {
+        setImageVisible(true);
+      }, 300); // Delay for the "pop" effect
+      return () => clearTimeout(timer);
+    }
+  }, [resolvedTheme, mounted]);
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,13 +79,18 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="py-8 md:py-20">
         <div className="container mx-auto text-center">
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-8 h-[600px] items-center">
               {mounted ? (
                   <Image 
                     src={imageSrc}
                     alt="Sathvik Shetty" 
                     width={600} 
                     height={600}
+                    priority
+                    className={cn(
+                      "transition-all duration-500 ease-in-out",
+                      imageVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    )}
                   />
               ) : (
                 <div style={{width: 600, height: 600}} />
