@@ -59,7 +59,7 @@ export default function Home() {
     (e.target as HTMLFormElement).reset();
   };
   
-  const imageSrc = resolvedTheme === 'dark' ? '/images/n.png' : '/images/i.png';
+  const imageSrc = resolvedTheme === 'dark' ? '/images/nn.png' : '/images/i.png';
 
   return (
     <>
