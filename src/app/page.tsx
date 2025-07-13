@@ -122,7 +122,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 md:py-24 bg-secondary">
+      <section id="projects" className="py-12 md:py-24 bg-secondary">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 font-headline">My Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
