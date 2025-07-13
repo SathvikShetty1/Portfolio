@@ -1,12 +1,9 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Github, Linkedin, Mail, ArrowRight, ExternalLink, Feather } from 'lucide-react';
 import Image from 'next/image';
-import { useToast } from '@/hooks/use-toast';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
@@ -43,7 +40,6 @@ const projects = [
 ];
 
 export default function Home() {
-  const { toast } = useToast();
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [imageVisible, setImageVisible] = useState(false);
@@ -65,15 +61,6 @@ export default function Home() {
     }
   }, [resolvedTheme, mounted]);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    (e.target as HTMLFormElement).reset();
-  };
-  
   const imageSrc = resolvedTheme === 'dark' ? '/images/nn.png' : '/images/i.png';
 
   return (
@@ -135,11 +122,11 @@ export default function Home() {
             {projects.map((project) => (
               <Card key={project.title} className="group flex flex-col overflow-hidden bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:ring-2 hover:ring-primary">
                 <CardHeader className="p-0 overflow-hidden">
-                   <Image src={project.image} alt={project.title} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-110" data-ai-hint={project.hint} />
+                   <Image src={project.image} alt={project.title} width={600} height={400} className="object-cover transition-transform duration-300" data-ai-hint={project.hint} />
                 </CardHeader>
                 <CardContent className="flex-grow pt-6">
-                  <CardTitle className="font-headline transition-colors duration-300 group-hover:text-muted-foreground">{project.title}</CardTitle>
-                  <CardDescription className="mt-2 transition-colors duration-300 group-hover:text-muted-foreground/80">{project.description}</CardDescription>
+                  <CardTitle className="font-headline transition-colors duration-300">{project.title}</CardTitle>
+                  <CardDescription className="mt-2 transition-colors duration-300">{project.description}</CardDescription>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                   </div>
@@ -171,15 +158,12 @@ export default function Home() {
                   <CardTitle>Let's Connect</CardTitle>
                   <CardDescription>Have a question or want to work together? Drop me a message.</CardDescription>
               </CardHeader>
-              <CardContent>
-                  <form className="space-y-4" onSubmit={handleContactSubmit}>
-                      <Input placeholder="Your Name" type="text" required />
-                      <Input placeholder="Your Email" type="email" required />
-                      <Textarea placeholder="Your Message" rows={5} required />
-                      <Button type="submit" className="w-full">
-                          Send Message <ArrowRight />
-                      </Button>
-                  </form>
+              <CardContent className="text-center">
+                  <Button asChild size="lg">
+                    <a href="mailto:sathvikshetty794@gmail.com">
+                      Send an Email <Mail className="ml-2"/>
+                    </a>
+                  </Button>
               </CardContent>
           </Card>
         </div>
