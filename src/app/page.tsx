@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="py-8 md:py-20">
+      <section id="home" className="py-8 md:py-16">
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-8 h-[600px] items-center">
               {mounted ? (
@@ -96,7 +96,7 @@ export default function Home() {
                     priority
                     className={cn(
                       "ease-in-out",
-                      imageVisible ? "opacity-100 scale-100 transition-all duration-500" : "opacity-0 scale-95"
+                      imageVisible ? "opacity-100 scale-100 transition-opacity duration-500" : "opacity-0 scale-95"
                     )}
                   />
               ) : (
