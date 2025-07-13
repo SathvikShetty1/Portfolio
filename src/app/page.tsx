@@ -78,9 +78,9 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="pb-8 md:pb-16">
+      <section id="home" className="py-12 md:py-16">
         <div className="container mx-auto text-center">
-            <div className="flex justify-center mb-[-100px] h-[600px] items-center">
+            <div className="flex justify-center mb-[-100px] h-[500px] md:h-[600px] items-center">
               {mounted ? (
                   <Image 
                     src={imageSrc}
@@ -89,7 +89,7 @@ export default function Home() {
                     height={600}
                     priority
                     className={cn(
-                      "ease-in-out",
+                      "ease-in-out w-[500px] h-auto md:w-[600px]",
                       imageVisible ? "opacity-100 scale-100 transition-opacity duration-500" : "opacity-0"
                     )}
                   />
@@ -100,19 +100,19 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline leading-tight">
               Sathvik Shetty
             </h1>
-            <p className="text-2xl md:text-3xl text-muted-foreground mt-3 mb-8">
+            <p className="text-xl md:text-3xl text-muted-foreground mt-2 mb-4">
               Aspiring Cloud & Network Engineer
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-md md:text-lg text-muted-foreground max-w-2xl mx-auto">
               I'm on an exciting journey exploring the vast world of AWS Cloud and Network Engineering. This portfolio is a living document of my projects, learnings, and growth in building robust and scalable cloud infrastructure.
             </p>
-            <div className="flex gap-4 pt-8 justify-center">
-              <Button size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center">
+              <Button size="lg" asChild className="w-full sm:w-auto">
                 <a href="#projects">
                   View My Projects <ArrowRight />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
                 <a href="#contact">
                   Get In Touch <Mail />
                 </a>
@@ -122,9 +122,9 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 md:py-24 bg-secondary">
+      <section id="projects" className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-headline">My Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 font-headline">My Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.title} className="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl bg-card">
@@ -157,9 +157,9 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 md:py-24">
+      <section id="contact" className="py-16 md:py-24">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-headline">Contact Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 font-headline">Contact Me</h2>
           <Card className="max-w-2xl mx-auto shadow-lg">
               <CardHeader>
                   <CardTitle>Let's Connect</CardTitle>
