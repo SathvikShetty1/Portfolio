@@ -55,9 +55,10 @@ export default function Home() {
   useEffect(() => {
     if (mounted) {
       setImageVisible(false);
+      // Delay the "pop" effect to happen after the background transition
       const timer = setTimeout(() => {
         setImageVisible(true);
-      }, 300); // Delay for the "pop" effect
+      }, 500); 
       return () => clearTimeout(timer);
     }
   }, [resolvedTheme, mounted]);
