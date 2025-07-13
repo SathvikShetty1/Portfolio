@@ -9,15 +9,9 @@ export const metadata: Metadata = {
   title: 'Sathvik',
   description: 'A portfolio showcasing my journey in AWS Cloud and Network Engineering.',
   icons: {
-    icon: [
-      { url: '/images/i.png' },
-      new URL('/images/i.png', 'https://your-domain.com'), // Absolute URL for better compatibility
-    ],
-    shortcut: ['/images/i.png'],
-    apple: [
-      { url: '/images/i.png' },
-      { url: '/images/i.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: '/images/i.png',
+    shortcut: '/images/i.png',
+    apple: '/images/i.png',
   },
 };
 
