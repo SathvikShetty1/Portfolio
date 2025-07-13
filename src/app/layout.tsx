@@ -6,7 +6,7 @@ import Header from '@/components/layout/Header';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 
 export const metadata: Metadata = {
-  title: 'CloudFolio - Portfolio',
+  title: 'Sathvik',
   description: 'A portfolio showcasing my journey in AWS Cloud and Network Engineering.',
 };
 
