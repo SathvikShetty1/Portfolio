@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { Github, Linkedin, Mail, ArrowRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { useToast } from '@/hooks/use-toast';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const projects = [
   {
@@ -40,6 +42,12 @@ const projects = [
 
 export default function Home() {
   const { toast } = useToast();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,6 +58,8 @@ export default function Home() {
     });
     (e.target as HTMLFormElement).reset();
   };
+  
+  const imageSrc = resolvedTheme === 'dark' ? '/images/n.png' : '/images/i.png';
 
   return (
     <>
@@ -57,12 +67,16 @@ export default function Home() {
       <section id="home" className="py-8 md:py-20">
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-8">
-              <Image 
-                src="/images/i.png" 
-                alt="Sathvik Shetty" 
-                width={600} 
-                height={600}
-              />
+              {mounted ? (
+                  <Image 
+                    src={imageSrc}
+                    alt="Sathvik Shetty" 
+                    width={600} 
+                    height={600}
+                  />
+              ) : (
+                <div style={{width: 600, height: 600}} />
+              )}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline leading-tight">
               Sathvik Shetty
