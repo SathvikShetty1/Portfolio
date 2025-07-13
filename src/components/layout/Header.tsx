@@ -38,8 +38,7 @@ export default function Header() {
     <header className="absolute top-0 left-0 right-0 p-4 z-50 flex justify-between items-center">
       <Button asChild variant="ghost">
         <Link href="/blog">
-          <Feather className="mr-2 h-4 w-4" />
-          Blog
+          <Feather />
         </Link>
       </Button>
       <ThemeToggle />
