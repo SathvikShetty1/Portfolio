@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Github, Linkedin, Mail, ArrowRight, ExternalLink, Feather } from 'lucide-react';
+import { Github, Linkedin, ArrowRight, ExternalLink, Feather } from 'lucide-react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -107,7 +107,7 @@ export default function Home() {
               </Button>
               <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
                 <a href="mailto:sathvikshetty794@gmail.com">
-                  Get In Touch <Mail />
+                  Get In Touch <ExternalLink />
                 </a>
               </Button>
             </div>
@@ -161,7 +161,7 @@ export default function Home() {
               <CardContent className="text-center">
                   <Button asChild size="lg">
                     <a href="mailto:sathvikshetty794@gmail.com">
-                      Send an Email <Mail className="ml-2"/>
+                      Send an Email <ExternalLink className="ml-2"/>
                     </a>
                   </Button>
               </CardContent>
