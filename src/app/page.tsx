@@ -60,8 +60,8 @@ export default function Home() {
               <Image 
                 src="/images/i.png" 
                 alt="Sathvik Shetty" 
-                width={300} 
-                height={300}
+                width={600} 
+                height={600}
               />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline leading-tight">
