@@ -80,7 +80,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="pt-0 pb-8 md:pb-16">
         <div className="container mx-auto text-center">
-            <div className="flex justify-center mb-[2px] h-[600px] items-center">
+            <div className="flex justify-center mb-[-10px] h-[600px] items-center">
               {mounted ? (
                   <Image 
                     src={imageSrc}
