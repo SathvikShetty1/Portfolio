@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="pt-10 pb-8 md:pb-16">
+      <section id="home" className="pt-[10px] pb-8 md:pb-16">
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-8 h-[600px] items-center">
               {mounted ? (
