@@ -47,18 +47,24 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [imageVisible, setImageVisible] = useState(false);
 
+  // Set mounted and initial image visibility
   useEffect(() => {
     setMounted(true);
     setImageVisible(true);
   }, []);
 
+  // Handle theme change animation
   useEffect(() => {
     if (mounted) {
+      // 1. Immediately hide the image to start the transition
       setImageVisible(false);
-      // Delay the "pop" effect to happen after the background transition
+      
+      // 2. Set a timer to show the image after the background has transitioned
       const timer = setTimeout(() => {
         setImageVisible(true);
-      }, 500); 
+      }, 500); // 500ms delay ensures background transition (300ms) is complete
+
+      // Cleanup timer on component unmount or if theme changes again
       return () => clearTimeout(timer);
     }
   }, [resolvedTheme, mounted]);
