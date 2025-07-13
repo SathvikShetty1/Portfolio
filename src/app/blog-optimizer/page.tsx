@@ -52,7 +52,7 @@ export default function BlogOptimizerPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto py-16">
       <div className="text-center mb-12">
         <Wand2 className="mx-auto h-12 w-12 text-primary" />
         <h1 className="text-4xl md:text-5xl font-bold font-headline mt-4">Blog Optimizer</h1>
