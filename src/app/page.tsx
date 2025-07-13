@@ -47,31 +47,25 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [imageVisible, setImageVisible] = useState(false);
 
-  // Set mounted and initial image visibility
   useEffect(() => {
     setMounted(true);
     setImageVisible(true);
   }, []);
 
-  // Handle theme change animation
   useEffect(() => {
     if (mounted) {
-      // 1. Immediately hide the image to start the transition
       setImageVisible(false);
       
-      // 2. Set a timer to show the image after the background has transitioned
       const timer = setTimeout(() => {
         setImageVisible(true);
-      }, 400); // 400ms delay ensures background transition is complete
+      }, 400); 
 
-      // Cleanup timer on component unmount or if theme changes again
       return () => clearTimeout(timer);
     }
   }, [resolvedTheme, mounted]);
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd handle form submission here.
     toast({
       title: "Message Sent!",
       description: "Thanks for reaching out. I'll get back to you soon.",
@@ -84,7 +78,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="pt-[10px] pb-8 md:pb-16">
+      <section id="home" className="pt-0 pb-8 md:pb-16">
         <div className="container mx-auto text-center">
             <div className="flex justify-center mb-8 h-[600px] items-center">
               {mounted ? (
