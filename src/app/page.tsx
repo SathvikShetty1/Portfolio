@@ -127,7 +127,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 font-headline">My Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card key={project.title} className="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl bg-card">
+              <Card key={project.title} className="flex flex-col overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl bg-card">
                 <CardHeader className="p-0">
                    <Image src={project.image} alt={project.title} width={600} height={400} className="object-cover" data-ai-hint={project.hint} />
                 </CardHeader>
