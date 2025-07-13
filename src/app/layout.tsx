@@ -31,7 +31,7 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <Header />
-          <main className="flex-grow pt-16">{children}</main>
+          <main className="flex-grow pt-5">{children}</main>
           <Toaster />
         </ThemeProvider>
       </body>
