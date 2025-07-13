@@ -4,12 +4,13 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { Github, Linkedin, Mail, ArrowRight, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight, ExternalLink, Feather } from 'lucide-react';
 import Image from 'next/image';
 import { useToast } from '@/hooks/use-toast';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const projects = [
   {
@@ -112,6 +113,11 @@ export default function Home() {
                   View My Projects <ArrowRight />
                 </a>
               </Button>
+               <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
+                <Link href="/blog">
+                  Blog <Feather />
+                </Link>
+              </Button>
               <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
                 <a href="#contact">
                   Get In Touch <Mail />
@@ -129,11 +135,11 @@ export default function Home() {
             {projects.map((project) => (
               <Card key={project.title} className="group flex flex-col overflow-hidden bg-card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:ring-2 hover:ring-primary">
                 <CardHeader className="p-0 overflow-hidden">
-                   <Image src={project.image} alt={project.title} width={600} height={400} className="object-cover" data-ai-hint={project.hint} />
+                   <Image src={project.image} alt={project.title} width={600} height={400} className="object-cover transition-transform duration-300 group-hover:scale-110" data-ai-hint={project.hint} />
                 </CardHeader>
                 <CardContent className="flex-grow pt-6">
-                  <CardTitle className="font-headline">{project.title}</CardTitle>
-                  <CardDescription className="mt-2">{project.description}</CardDescription>
+                  <CardTitle className="font-headline transition-colors duration-300 group-hover:text-muted-foreground">{project.title}</CardTitle>
+                  <CardDescription className="mt-2 transition-colors duration-300 group-hover:text-muted-foreground/80">{project.description}</CardDescription>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                   </div>
